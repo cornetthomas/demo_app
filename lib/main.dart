@@ -1,5 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 import 'dart:io';
 
 import 'list_screen.dart';
@@ -102,25 +101,15 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
-            Platform.isIOS
-                ? CupertinoButton(
-                    child: Text("Show a list"),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ListScreen()),
-                      );
-                    },
-                  )
-                : RaisedButton(
-                    child: Text("Show a list"),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ListScreen()),
-                      );
-                    },
-                  ),
+            RaisedButton(
+              child: Text("Show a list"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ListScreen()),
+                );
+              },
+            ),
           ],
         ),
       ),
